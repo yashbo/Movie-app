@@ -1,4 +1,4 @@
-const API_URL='https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a9db55e320a08a5322f902a52c321df4&page=1'
+const API_URL='https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a9db55e320a08a5322f902a52c321df4&page='
 const IMG_PATH='https://image.tmdb.org/t/p/w500'
 const SEARCH_API='https://api.themoviedb.org/3/search/movie?api_key=a9db55e320a08a5322f902a52c321df4&query="'
 
@@ -7,7 +7,33 @@ const form=document.getElementById('form')
 const search=document.getElementById('search')
 //initial movies
 getMovies(API_URL)
-
+const home=document.getElementById('ho')
+const a=1
+home.addEventListener('click', ()=>gettopage(a))
+function gettopage(a){
+    getMovies(API_URL+a)
+}
+const buttons=document.querySelectorAll('.btn')
+buttons.forEach((button, idx)=>{
+    button.addEventListener('click', ()=>nextbtn(idx))
+})
+function nextbtn(idx){
+    const page=idx+1;
+    if(page>=2){
+        getMovies(API_URL+page)
+    }
+    else{
+        window.location.reload()
+    }
+    buttons.forEach((button,idx2)=>{
+        if(idx==idx2){
+            button.classList.add('full')
+        }
+        else{
+            button.classList.remove('full')
+        }
+    })
+}
 async function getMovies(url){
     const res=await fetch(url)
     const data=await res.json()
