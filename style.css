@@ -14,9 +14,12 @@ body{
 }
 header{
     padding:1rem;
-    display: flex;
-    justify-content: flex-end;
     background-color: var(--secondary-color);
+}
+.srch{
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 0;
 }
 .search{
     background-color: transparent;
@@ -89,4 +92,80 @@ main{
 }
 .movie:hover .overview{
     transform:translateY(0);
+}
+#ho{
+    width:40px;
+    height:40px;
+    border-radius: 100%;
+    background-color: rgb(225, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom:40px;
+    left:0;
+    }
+#ho{
+    width:40px
+}
+.pages{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+
+}
+.btn{
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    max-height: 50px;
+    max-width: 50px;
+    position: relative;
+    top:0;
+    left:0;
+    padding:11.5px 20px;
+    border-radius:50px;
+    transition: transform 0.3s ease-in;
+    color:rgb(95, 95, 95);
+    margin: 0 30px;;
+}
+.btn:hover{
+    border:1px solid rgb(55,39,199);
+    color:rgb(87,39,199);
+    font-weight: bolder;
+    transform: scale(0.98);
+}
+.btn:focus{
+    .input:focus{
+        outline:none
+    }
+}
+.btn.full{
+    background-color: var(--secondary-color);
+    border:1px solid #fff;
+    color:#fff;
+}
+.name{
+    display: flex;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 32px;
+    color: cadetblue;
+}
+.icon{
+    width:70px;
+    height: 40px;
+    margin-bottom: 0;
+}
+.intro{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left:0;
+    left:0;
 }
